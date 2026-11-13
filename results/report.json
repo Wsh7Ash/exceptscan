@@ -1,0 +1,41 @@
+{
+  "target": "examples/bad_handler.py",
+  "summary": {
+    "total": 3,
+    "counts": {
+      "high": 1,
+      "medium": 2,
+      "low": 0
+    },
+    "worst": "high"
+  },
+  "findings": [
+    {
+      "rule": "bare-except",
+      "severity": "high",
+      "file": "examples\\bad_handler.py",
+      "line": 7,
+      "column": 5,
+      "message": "A bare 'except:' also catches KeyboardInterrupt and SystemExit.",
+      "snippet": "except:"
+    },
+    {
+      "rule": "silent-handler",
+      "severity": "medium",
+      "file": "examples\\bad_handler.py",
+      "line": 14,
+      "column": 5,
+      "message": "The handler neither logs nor re-raises, so failures leave no trace.",
+      "snippet": "except ValueError:"
+    },
+    {
+      "rule": "broad-except",
+      "severity": "medium",
+      "file": "examples\\bad_handler.py",
+      "line": 21,
+      "column": 5,
+      "message": "Catches Exception/BaseException instead of the expected error types.",
+      "snippet": "except Exception:"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+exceptscan report - examples/bad_handler.py
+====================================================
+[HIGH  ] bare-except          examples\bad_handler.py:7
+         A bare 'except:' also catches KeyboardInterrupt and SystemExit.
+         > except:
+[MEDIUM] silent-handler       examples\bad_handler.py:14
+         The handler neither logs nor re-raises, so failures leave no trace.
+         > except ValueError:
+[MEDIUM] broad-except         examples\bad_handler.py:21
+         Catches Exception/BaseException instead of the expected error types.
+         > except Exception:
+----------------------------------------------------
+3 finding(s): 1 high, 2 medium, 0 low

@@ -1,0 +1,9 @@
+$ python -m pip install -e . pytest --quiet
+
+[notice] A new release of pip is available: 26.2.1 -> 26.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+$ python -m pytest tests -q
+........                                                                 [100%]
+8 passed in 0.06s
+$ bash -c exceptscan scan examples/bad_handler.py --fail-on none > results/report.txt
+$ bash -c exceptscan scan examples/bad_handler.py --fail-on none --json > results/report.json

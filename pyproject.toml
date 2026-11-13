@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exceptscan"
+version = "1.0.0"
+description = "AST-based review of Python exception handlers that hide failures"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["python", "code-review", "static-analysis", "exceptions"]
+dependencies = []
+
+[project.scripts]
+exceptscan = "exceptscan.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
